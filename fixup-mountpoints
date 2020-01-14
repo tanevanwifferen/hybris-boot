@@ -490,6 +490,19 @@ case "$DEVICE" in
             -e 's block/platform/msm_sdcc.1/by-name/userdata mmcblk0p28 ' \
             "$@"
         ;;
+	
+    "H870" | "h870")
+        sed -i \
+            -e 's block/bootdevice/by-name/system sda14 ' \
+            -e 's block/bootdevice/by-name/cache sda15 ' \
+            -e 's block/bootdevice/by-name/userdata sda17 ' \
+            -e 's block/bootdevice/by-name/persist sda13 ' \
+            -e 's block/bootdevice/by-name/modem sde18 ' \
+            -e 's block/bootdevice/by-name/sns sda5 ' \
+            -e 's block/bootdevice/by-name/drm sda4 ' \
+            -e 's block/bootdevice/by-name/mpt sda3 ' \
+            "$@"
+        ;;
 
     "mako")
         sed -i \
